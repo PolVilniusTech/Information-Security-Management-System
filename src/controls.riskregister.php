@@ -91,7 +91,7 @@ if(isset($_POST['btnManage']) && isset($_POST["control_uns"]) && isset($_POST["r
         }
 	
 	$checkqry = "SELECT
-				IF(EXISTS(SELECT 1 FROM risk_register WHERE risk_un = ? LIMIT 1), 1, 0) AS one;";
+				IF(EXISTS(SELECT 1 FROM risk_register WHERE risk_un = ? LIMIT 1) IS TRUE, 1, 0) AS one;";
 				
 	$chstmt = mysqli_prepare($connection, $checkqry);
 	mysqli_stmt_bind_param($chstmt,'i', $un);
