@@ -56,7 +56,7 @@ if(!$connection) {
 if(isset($_GET['discard'])) {
 	$un = (int)$_GET['discard'];
 	$checkqry = "SELECT
-				IF(EXISTS(SELECT 1 FROM corrective_action WHERE corrective_action_id = ? LIMIT 1), 1, 0) AS one;";
+				IF(EXISTS(SELECT 1 FROM corrective_action WHERE corrective_action_id = ? LIMIT 1) IS TRUE, 1, 0) AS one;";
 				
 	$chstmt = mysqli_prepare($connection, $checkqry);
 	mysqli_stmt_bind_param($chstmt,'i', $un);
@@ -118,7 +118,7 @@ if(isset($_POST['btnManage'])) {
         }
 	
 	$checkqry = "SELECT
-				IF(EXISTS(SELECT 1 FROM corrective_action WHERE corrective_action_id = ? LIMIT 1), 1, 0) AS one;";
+				IF(EXISTS(SELECT 1 FROM corrective_action WHERE corrective_action_id = ? LIMIT 1) IS TRUE, 1, 0) AS one;";
 				
 	$chstmt = mysqli_prepare($connection, $checkqry);
 	mysqli_stmt_bind_param($chstmt,'i', $un);
