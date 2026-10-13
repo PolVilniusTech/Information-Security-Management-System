@@ -873,7 +873,7 @@ td {
 	    let frt_name_v = frt_name.value;
 	    var lst_name = document.querySelector( "input[name='lname']" );
 	    let lst_name_v = lst_name.value;
-	    var psd_name = document.querySelector( "input[name='username']" );
+	    var psd_name = document.querySelector( "input[name='usernameAdm']" );
 	    let psd_name_v = psd_name.value;
 	    var eml_addr = document.querySelector( "input[name='email']" );
 	    let eml_addr_v = eml_addr.value;
